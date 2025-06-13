@@ -1,13 +1,19 @@
 "use client";
 
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { motion } from "framer-motion";
+
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+
 import { TechStackSection } from "./(components)/tech-stack-section";
+import { ProjectsSection } from "./(components)/projects-section";
+import { ContactSection } from "./(components)/contact-section";
+import { GitHubSection } from "./(components)/github-section";
 
 export default function Home() {
   return (
     <>
-      <section className="h-[92vh] mx-auto text-center sm:text-center">
+      <BackgroundGradientAnimation className="h-[92vh] pt-20 md:pt-28 px-4 mx-auto text-center sm:text-center">
         <div className="px-4 py-10 md:py-16 3xl:py-40">
           <h1 className="relative z-10 mx-auto max-w-3xl 3xl:max-w-6xl text-5xl lg:text-6xl 3xl:text-8xl text-center font-bold text-slate-700 dark:text-slate-300">
             {"Hi, I'm Etele — I build reliable, full-stack solutions"
@@ -77,9 +83,12 @@ export default function Home() {
             </button>
           </motion.div>
         </div>
-      </section>
-      <TechStackSection />
-      <div className="h-[100vh]" />
+      </BackgroundGradientAnimation>
+      <TechStackSection className="pt-20 px-6" />
+      <ProjectsSection className="pt-12 px-6" />
+
+      <GitHubSection />
+      <ContactSection />
     </>
   );
 }

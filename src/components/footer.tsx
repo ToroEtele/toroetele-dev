@@ -1,0 +1,77 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import { HTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
+
+export type FooterProps = HTMLAttributes<HTMLElement>;
+
+export function Footer({ className, ...props }: FooterProps) {
+  return (
+    <footer
+      className={cn(
+        "min-h-[40vh] w-[85%] mx-auto flex flex-col gap-12 items-center p-12",
+        className
+      )}
+      {...props}
+    >
+      <div className="w-full flex flex-row p-8 border-b border-gray-500">
+        <div className="w-[80%]">
+          <h1 className="text-3xl">Toró Etele</h1>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h2 className="text-xl font-medium">SOCIAL</h2>
+          <div className="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/linkedin.svg"
+                alt="LinkedIn"
+                className="w-6 h-6 hover:opacity-80 text-gray-200"
+              />
+            </a>
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/github.svg"
+                alt="GitHub"
+                className="w-6 h-6 hover:opacity-80"
+              />
+            </a>
+            <a
+              href="https://x.com/your-handle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/x.svg"
+                alt="Twitter/X"
+                className="w-6 h-6 hover:opacity-80"
+              />
+            </a>
+            <a
+              href="https://facebook.com/your-page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/facebook.svg"
+                alt="Facebook"
+                className="w-6 h-6 hover:opacity-80"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <p className="text-sm">
+        © Copyright {new Date().getFullYear()} . Made by Toró Etele
+      </p>
+    </footer>
+  );
+}

@@ -15,7 +15,7 @@ export function Header({ className, ...props }: HeaderProps) {
       <Link href="/" className="text-lg font-semibold">
         Toró Etele
       </Link>
-      <nav className="flex gap-4 text-sm">
+      {/* <nav className="flex gap-4 text-sm">
         <Link href="#about" className="hover:underline">
           About
         </Link>
@@ -25,7 +25,7 @@ export function Header({ className, ...props }: HeaderProps) {
         <Link href="#contact" className="hover:underline">
           Contact
         </Link>
-      </nav>
+      </nav> */}
     </header>
   );
 }

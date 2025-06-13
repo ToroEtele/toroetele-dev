@@ -1,14 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { cn } from "@/lib/utils";
 import React from "react";
 
-export function TechStackSection() {
+interface TechStackSectionProps {
+  className?: string;
+}
+
+export function TechStackSection({ className }: TechStackSectionProps) {
   return (
-    <section className="max-w-4xl 3xl:max-w-6xl mx-auto">
-      <h1 className="text-4xl 3xl:text-6xl mb-4 md:mb-6 3xl:mb-16">
+    <section
+      className={cn(
+        "max-w-4xl 3xl:max-w-6xl flex flex-col mx-auto mb-6",
+        className
+      )}
+    >
+      <h1 className="w-full text-5xl 3xl:text-6xl mb-4 md:mb-6 3xl:mb-16 text-center">
         Tech stack
       </h1>
-      <p className="text-sm 3xl:text-xl mb-4">
+      <p className="text-xs md:text-sm 3xl:text-xl mb-4">
         I usually avoid emphasizing specific programming languages when
         presenting my skills. For me, the language itself doesn&apos;t matter
         that much. Of course, you need to get used to the syntax and dive into
