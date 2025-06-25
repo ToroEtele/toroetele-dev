@@ -3,6 +3,7 @@
 
 import { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import { ThemeSwitcher } from "./theme-switcher";
 
 export type FooterProps = HTMLAttributes<HTMLElement>;
 
@@ -16,12 +17,12 @@ export function Footer({ className, ...props }: FooterProps) {
       {...props}
     >
       <div className="w-full flex flex-row p-8 border-b border-gray-500">
-        <div className="w-[80%]">
+        <div className="w-[80%] flex flex-col items-start">
           <h1 className="text-3xl">Toró Etele</h1>
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-xl font-medium">SOCIAL</h2>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <a
               href="https://www.linkedin.com/in/your-profile"
               target="_blank"
@@ -30,7 +31,7 @@ export function Footer({ className, ...props }: FooterProps) {
               <img
                 src="/linkedin.svg"
                 alt="LinkedIn"
-                className="w-6 h-6 hover:opacity-80 text-gray-200"
+                className="w-8 h-8 hover:opacity-80 text-gray-200"
               />
             </a>
             <a
@@ -41,7 +42,7 @@ export function Footer({ className, ...props }: FooterProps) {
               <img
                 src="/github.svg"
                 alt="GitHub"
-                className="w-6 h-6 hover:opacity-80"
+                className="w-8 h-8 hover:opacity-80"
               />
             </a>
             <a
@@ -55,17 +56,7 @@ export function Footer({ className, ...props }: FooterProps) {
                 className="w-6 h-6 hover:opacity-80"
               />
             </a>
-            <a
-              href="https://facebook.com/your-page"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/facebook.svg"
-                alt="Facebook"
-                className="w-6 h-6 hover:opacity-80"
-              />
-            </a>
+            <ThemeSwitcher className="h-8 w-8" />
           </div>
         </div>
       </div>

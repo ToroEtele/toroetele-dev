@@ -52,6 +52,7 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
           strategy="beforeInteractive"
         />
+        <link rel="icon" type="image/png" href="/logo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-full min-h-[100vh] overflow-x-hidden`}

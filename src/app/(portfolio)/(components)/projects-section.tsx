@@ -27,15 +27,13 @@ const content = [
     description:
       "Track expenses, fieldwork, and crop health with ease. Harvest Mate is ready to work the land with you. Unlock a new layer of farm intelligence with multispectral satellite imagery — analyze crop health, spot issues early, and make data-driven decisions with confidence.",
     content: (
-      <div className="z-50 flex h-full w-full items-center justify-center text-white">
-        <Image
-          src="/harvest-mate-landing-page.png"
-          width={600}
-          height={300}
-          className="z-50 h-full w-full object-fit"
-          alt="linear board demo"
-        />
-      </div>
+      <Image
+        src="/harvest-mate-landing-page.png"
+        width={600}
+        height={400}
+        className="z-50"
+        alt="linear board demo"
+      />
     ),
   },
   {

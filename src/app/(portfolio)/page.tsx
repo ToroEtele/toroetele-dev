@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,21 +9,47 @@ import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { TechStackSection } from "./(components)/tech-stack-section";
 import { ProjectsSection } from "./(components)/projects-section";
 import { ContactSection } from "./(components)/contact-section";
-import { GitHubSection } from "./(components)/github-section";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function Home() {
   return (
     <>
-      <BackgroundGradientAnimation className="h-[92vh] pt-20 md:pt-28 px-4 mx-auto text-center sm:text-center">
+      <BackgroundGradientAnimation className="relative h-[92vh] pt-20 md:pt-28 px-4 mx-auto text-center sm:text-center">
+        <div className="absolute top-1/2 left-2 transform -translate-y-1/2 flex flex-col items-center p-1 bg-background rounded-lg gap-1">
+          <a
+            href="https://www.linkedin.com/in/etele-tor%C3%B3/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/linkedin.svg"
+              alt="LinkedIn"
+              className="w-10 h-10 hover:opacity-80"
+            />
+          </a>
+          <a
+            href="https://github.com/ToroEtele"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/github.svg"
+              alt="GitHub"
+              className="w-10 h-10 hover:opacity-80"
+            />
+          </a>
+          <ThemeSwitcher className="mt-1 cursor-pointer" />
+        </div>
+
         <div className="px-4 py-10 md:py-16 3xl:py-40">
-          <h1 className="relative z-10 mx-auto max-w-3xl 3xl:max-w-6xl text-5xl lg:text-6xl 3xl:text-8xl text-center font-bold text-slate-700 dark:text-slate-300">
+          <h1 className="relative z-10 mx-auto max-w-3xl 3xl:max-w-6xl text-5xl lg:text-6xl 3xl:text-8xl text-center font-bold text-slate-300">
             {"Hi, I'm Etele — I build reliable, full-stack solutions"
               .split(" ")
               .map((word, index) =>
                 word === "full-stack" ? (
                   <PointerHighlight
                     key={index}
-                    rectangleClassName="leading-loose"
+                    rectangleClassName="leading-loose border-white"
                     pointerClassName="text-yellow-500 h-3 w-3"
                     containerClassName="inline-block mr-1"
                   >
@@ -62,7 +89,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.8 }}
-            className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg 3xl:text-xl font-normal text-neutral-600 dark:text-neutral-400"
+            className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg 3xl:text-xl font-normal text-neutral-400"
           >
             I design and develop complete digital experiences—from intuitive
             frontends to powerful backends, topped with streamlined DevOps
@@ -86,8 +113,6 @@ export default function Home() {
       </BackgroundGradientAnimation>
       <TechStackSection className="pt-20 px-6" />
       <ProjectsSection className="pt-12 px-6" />
-
-      <GitHubSection />
       <ContactSection />
     </>
   );

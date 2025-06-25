@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 interface ContactSectionProps {
   className?: string;
@@ -32,33 +33,38 @@ export function ContactSection({ className }: ContactSectionProps) {
   }
 
   return (
-    <section className={cn("max-w-3xl mx-auto min-h-[90vh] elev", className)}>
-      <h1 className="w-full text-5xl 3xl:text-6xl mb-4 md:mb-6 3xl:mb-16 text-center">
+    <section
+      className={cn(
+        "relative min-h-[90vh] flex flex-col items-center py-12 mx-auto",
+        className
+      )}
+    >
+      <h1 className="z-50 w-full text-5xl 3xl:text-6xl mb-4 md:mb-6 3xl:mb-16 text-center">
         Contact
       </h1>
-      <p className="w-full mb-8 text-center text-lg">
+      <p className="z-50 w-full mb-8 text-center text-lg">
         Feel free to Contact me by submitting the form below and I will get back
         to you as soon as possible
       </p>
 
-      <div className="w-full flex flex-col p-8 bg-muted rounded-xl shadow-xl">
+      <div className="z-50 w-full max-w-3xl flex flex-col items-end p-8 bg-background rounded-xl shadow-xl border border-muted">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col gap-4 text-muted-foreground "
+            className="w-full flex flex-col items-end gap-6 text-muted-foreground "
           >
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder=""
+                      placeholder="Name"
                       type="text"
                       {...field}
-                      className="rounded-md"
+                      className="bg-muted rounded-md"
                     />
                   </FormControl>
                   <FormMessage />
@@ -69,14 +75,14 @@ export function ContactSection({ className }: ContactSectionProps) {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder=""
+                      placeholder="Email"
                       type="text"
                       {...field}
-                      className="rounded-md"
+                      className="bg-muted rounded-md"
                     />
                   </FormControl>
                   <FormMessage />
@@ -87,23 +93,37 @@ export function ContactSection({ className }: ContactSectionProps) {
               control={form.control}
               name="message"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder=""
+                      placeholder="Message"
                       {...field}
                       rows={10}
-                      className="rounded-md resize-none h-60"
+                      className="bg-muted rounded-md resize-none h-60"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
+            <Button>SUBMIT</Button>
           </form>
         </Form>
       </div>
+
+      <div
+        className={cn(
+          "absolute z-10 inset-0",
+          "[background-size:40px_40px]",
+          "[background-image:linear-gradient(to_right,rgba(228,228,231,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.7)_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,rgba(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,38,38,0.5)_1px,transparent_1px)]",
+          "[mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]",
+          "pointer-events-none"
+        )}
+      />
+
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
     </section>
   );
 }
