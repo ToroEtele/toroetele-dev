@@ -21,6 +21,7 @@ export function Header({ className, ...props }: HeaderProps) {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <header
       className={cn(

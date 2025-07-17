@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Form,
   FormControl,
@@ -34,8 +36,9 @@ export function ContactSection({ className }: ContactSectionProps) {
 
   return (
     <section
+      id="contact"
       className={cn(
-        "relative min-h-[90vh] flex flex-col items-center py-12 mx-auto",
+        "relative min-h-[90vh] flex flex-col items-center py-16 mx-auto",
         className
       )}
     >

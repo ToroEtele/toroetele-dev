@@ -8,10 +8,12 @@ export const InfiniteMovingCards = ({
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
+
   className,
 }: {
   items: {
     label: string;
+    bgColor: string;
     icon: React.JSX.Element;
   }[];
   direction?: "left" | "right";
@@ -25,6 +27,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -79,7 +82,7 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-2",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -87,9 +90,13 @@ export const InfiniteMovingCards = ({
         {items.map((item) => (
           <li
             key={item.label}
-            className="flex items-center justify-center h-25 w-25 bg-zinc-100 dark:bg-zinc-800 rounded-md shadow-md"
+            className={cn(
+              "h-10 flex items-center justify-center p-2 gap-2 rounded-md shadow-md",
+              item.bgColor ?? "bg-zinc-100 dark:bg-zinc-800"
+            )}
           >
             {item.icon}
+            {item.label}
           </li>
         ))}
       </ul>

@@ -12,7 +12,7 @@ export type MarketingLayoutProps = {
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
-    <div className={cn("relative flex min-h-[100vh] max-w-[100vw] flex-col")}>
+    <div className={"relative flex min-h-[100vh] max-w-[100vw] flex-col"}>
       <div
         className={cn(
           "hidden md:block fixed left-0 top-0 z-50 w-full bg-transparent"
