@@ -3,8 +3,7 @@
 import React, { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 
-import { Spotlight } from "./spotlight";
-import DeviceMockup from "../primitives/device-mockup";
+import { DeviceMockup } from "../primitives/device-mockup";
 
 export const StickyScroll = ({
   content,
@@ -40,12 +39,12 @@ export const StickyScroll = ({
 
   return (
     <motion.section ref={ref} className="relative w-full py-10 lg:py-20">
-      <div className="mx-auto flex max-w-8xl flex-col-reverse md:flex-row items-start justify-center gap-20">
-        <div className="w-full md:max-w-md px-6 py-22 space-y-32">
+      <div className="mx-auto flex max-w-8xl flex-col-reverse md:flex-row items-start justify-center gap-8 xl:gap-20">
+        <div className="w-full md:max-w-md py-22 space-y-32">
           {content.map((item, index) => (
             <div
               key={item.title + index}
-              className="w-full md:w-auto text-center md:text-left min-h-[30vh] md:min-h-[50vh]"
+              className="min-h-[30vh] md:min-h-[50vh] w-full md:w-auto text-center px-6 md:text-left"
             >
               <motion.h2
                 initial={{ opacity: 0 }}
@@ -65,8 +64,14 @@ export const StickyScroll = ({
           ))}
         </div>
 
-        <div className="sticky top-20 self-center md:self-auto">
-          <DeviceMockup>{content[activeCard].content}</DeviceMockup>
+        <div className="sticky top-0 self-center md:self-auto z-10">
+          <div className="relative pt-20 pb-10 w-full h-full">
+            <div className="absolute inset-0 bg-background z-0" />
+
+            <DeviceMockup className="relative z-10">
+              {content[activeCard].content}
+            </DeviceMockup>
+          </div>
         </div>
       </div>
     </motion.section>

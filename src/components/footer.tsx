@@ -3,7 +3,7 @@
 
 import { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
-import { ThemeSwitcher } from "./theme-switcher";
+import { ThemeSwitcher } from "./primitives/theme-switcher";
 
 export type FooterProps = HTMLAttributes<HTMLElement>;
 

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ThemeSwitcher } from "@/components/primitives/theme-switcher";
 import { cn } from "@/lib/utils";
 
 interface FloatingMenuProps {
@@ -12,7 +12,7 @@ export function FloatingMenu({ className }: FloatingMenuProps) {
   return (
     <div
       className={cn(
-        "absolute z-40 flex flex-row md:flex-col items-center p-1 rounded-lg gap-1 bg-white",
+        "absolute z-40 flex flex-row xl:flex-col items-center p-1 rounded-lg gap-1 bg-white",
         className
       )}
     >

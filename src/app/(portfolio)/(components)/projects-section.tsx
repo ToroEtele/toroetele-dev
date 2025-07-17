@@ -35,12 +35,9 @@ const content = [
     description:
       "In my free time, I’m developing a comprehensive farm management tool designed to empower agricultural businesses. This app helps companies efficiently track daily tasks, manage multiple fields, monitor crop health, and keep detailed records of incomes and expenses. ",
     content: (
-      <Image
-        src="/harvest-mate-landing-page.png"
-        width={600}
-        height={400}
-        className="z-50"
-        alt="linear board demo"
+      <div
+        className="w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/harvest-mate-landing-page.png')" }}
       />
     ),
   },
