@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { useLottie } from "lottie-react";
+import { ChevronRight } from "lucide-react";
 
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { cn } from "@/lib/utils";
 
 import { HeaderSection } from "@/components/header-section";
 import comaigSoon from "./animations/coming-soon.json";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface ProjectsSectionProps {
   className?: string;
@@ -32,8 +35,22 @@ export function ProjectsSection({ className }: ProjectsSectionProps) {
 const content = [
   {
     title: "Harvest Mate",
-    description:
-      "In my free time, I’m developing a comprehensive farm management tool designed to empower agricultural businesses. This app helps companies efficiently track daily tasks, manage multiple fields, monitor crop health, and keep detailed records of incomes and expenses. ",
+    description: (
+      <div className="flex flex-col gap-6">
+        In my free time, I’m developing a comprehensive farm management tool
+        designed to empower agricultural businesses. This app helps companies
+        efficiently track daily tasks, manage multiple fields, monitor crop
+        health, and keep detailed records of incomes and expenses.
+        <Button className="w-fit bg-primary">
+          <Link
+            href="https://harvest-mate.com"
+            className="w-fit flex flex-row items-center gap-2 cursor-pointer"
+          >
+            Check it out <ChevronRight className="h-4 w-4" />
+          </Link>
+        </Button>
+      </div>
+    ),
     content: (
       <div
         className="w-full h-full bg-cover bg-center bg-no-repeat"
