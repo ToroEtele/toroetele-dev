@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLottie } from "lottie-react";
 import { ChevronRight } from "lucide-react";
 
@@ -11,6 +10,8 @@ import { HeaderSection } from "@/components/header-section";
 import comaigSoon from "./animations/coming-soon.json";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { DemoDashboard } from "@/components/(harvest-mate)/demo-dashboard";
+import { DemoJobs } from "@/components/(harvest-mate)/demo-jobs";
 
 interface ProjectsSectionProps {
   className?: string;
@@ -64,13 +65,7 @@ const content = [
       "The application is built using a diverse tech stack, including Next.js, Apollo, GraphQL, and Python. Thanks to the wide range of features it offers, I’ve had the opportunity to work with many different technologies throughout its development. One of the most exciting aspects has been exploring Earth observation data from the Sentinel satellites. Processing multispectral imagery to generate NDVI maps and other vegetation indexes has not only been technically rewarding but has also deepened my appreciation for the role of remote sensing in modern agriculture.",
     content: (
       <div className=" z-50 flex h-full w-full items-center justify-center text-white">
-        <Image
-          src="/harvest-mate-dashboard.png"
-          width={600}
-          height={300}
-          className="z-50 h-full w-full object-fit"
-          alt="linear board demo"
-        />
+        <DemoDashboard />
       </div>
     ),
   },
@@ -80,13 +75,7 @@ const content = [
       "Although this project is not open-source, you can explore the features I’ve built by visiting harvest-mate.com or simply clicking the button below.",
     content: (
       <div className="z-50 flex h-full w-full items-center justify-center text-white">
-        <Image
-          src="/harvest-mate-field-view.png"
-          width={600}
-          height={300}
-          className="z-50 h-full w-full object-fit"
-          alt="linear board demo"
-        />
+        <DemoJobs />
       </div>
     ),
   },
