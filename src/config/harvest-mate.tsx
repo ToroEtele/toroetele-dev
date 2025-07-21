@@ -38,15 +38,15 @@ export const navUserSidebarMenuButtonStyle =
   "h-4 xl:h-8 px-[0.1rem] gap-[0.1rem] lg:gap-2 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground rounded-xs";
 
 export const jobsTableHeaderStyle =
-  "px-[0.15rem] lg:px-2 py-[0.10rem] lg:py-[0.2rem] text-left font-medium text-3xs 2xl:text-2xs";
+  "px-[0.15rem] lg:px-2 py-[0.10rem] lg:py-[0.2rem] text-3xs lg:text-2.5xs 2xl:text-2xs font-medium";
 export const jobsTableRowStyle =
-  "px-[0.15rem] lg:px-2 py-[0.10rem] lg:py-[0.2rem] text-3xs 2xl:text-2xs";
+  "px-[0.15rem] lg:px-2 py-[0.10rem] lg:py-[0.2rem] text-3xs lg:text-2.5xs 2xl:text-2xs";
 export const jobsTableBadgeStyle =
-  "inline-flex items-center rounded-sm border py-[0.1rem] px-[0.2rem] text-3xs font-semibold";
+  "inline-flex items-center rounded-sm border lg:py-[0.1rem] px-[0.2rem] text-3xs font-semibold";
 export const jobsCardStyle =
   "p-1 lg:p-2 gap-[0.1rem] lg:gap-1 rounded-sm lg:rounded-md border-sidebar-border";
 export const jobsCardHeaderStyle =
-  "w-full flex flex-row items-center justify-between space-y-0 p-0 px-[0.1rem]";
+  "w-full flex flex-row items-center justify-between space-y-0 p-0";
 export const jobsCardDescriptionStyle =
   "text-4xs lg:text-3xs text-muted-foreground";
 export const jobsTabsStyle = "h-4 lg:h-6 xl:h-8 gap-1 rounded-sm lg:rounded-md";

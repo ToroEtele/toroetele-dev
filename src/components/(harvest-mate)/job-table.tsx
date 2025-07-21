@@ -136,7 +136,7 @@ export function JobsTable() {
       accessorKey: "status",
       header: "State",
       cell: () => (
-        <div className="h-full flex items-center justify-center py-[0.1rem] px-[0.2rem] rounded-sm bg-[#80e5b5]/40 border-[#80e5b5] text-[#80e5b5] border-1">
+        <div className="h-full flex items-center justify-center lg:py-[0.1rem] px-[0.2rem] rounded-sm bg-[#80e5b5]/40 border-[#80e5b5] text-[#80e5b5] border-1">
           Done
         </div>
       ),

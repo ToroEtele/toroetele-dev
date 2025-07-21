@@ -23,7 +23,7 @@ export function DemoJobs() {
       <AppSidebar />
       <SidebarInset className="w-full h-full rounded-r-md">
         <Navbar />
-        <div className="w-full h-full px-1">
+        <div className="w-full h-full px-1 2xl:px-2">
           <Tabs defaultValue="overview" className="py-5 md:py-7 gap-0 lg:gap-1">
             <div className="w-full flex justify-between">
               <TabsList className={jobsTabsStyle}>
@@ -66,7 +66,7 @@ export function DemoJobs() {
               </OptionsList>
             </div>
 
-            <div className="py-1 grid gap-1 lg:gap-4 grid-cols-4">
+            <div className="py-1 grid gap-1 2xl:gap-2 grid-cols-4">
               <Card className={jobsCardStyle}>
                 <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className={styles.cardTitle}>Expenses</CardTitle>
@@ -163,7 +163,7 @@ export function DemoJobs() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-7 gap-1 md:gap-2 p-1 md:p-2 rounded-sm md:rounded-lg border-sidebar-border">
+              <Card className="col-span-7 p-[0.15rem] md:p-1 xl:p-2 gap-[0.1rem] md:gap-1 xl:gap-2 rounded-sm md:rounded-lg border-sidebar-border">
                 <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className="text-3xs md:text-2xs">
                     Overview
