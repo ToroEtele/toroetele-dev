@@ -5,22 +5,24 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, VariantProps } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useIsMobile } from "@/lib/use-is-mobile";
+import { SIDEBAR_WIDTH_CONFIG } from "@/config/harvest-mate";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
-const SIDEBAR_WIDTH = "10rem";
+const SIDEBAR_WIDTH = SIDEBAR_WIDTH_CONFIG;
 const SIDEBAR_WIDTH_MOBILE = "4rem";
 const SIDEBAR_WIDTH_ICON = "1.5rem";
 const SIDEBAR_KEYBOARD_SHORTCUT = "b";

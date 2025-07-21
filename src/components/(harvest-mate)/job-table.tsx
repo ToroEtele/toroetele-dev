@@ -10,8 +10,6 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 
-// import { JobFamilyBadge } from "@/components/ui/job-family-badge";
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const t = (key: string, options?: any) =>
   options?.value instanceof Date
@@ -138,7 +136,7 @@ export function JobsTable() {
       accessorKey: "status",
       header: "State",
       cell: () => (
-        <div className="h-full flex items-center justify-center py-[0.1rem] px-[0.2rem] rounded-sm bg-[#80e5b5]/40 border-[#80e5b5] border-1">
+        <div className="h-full flex items-center justify-center py-[0.1rem] px-[0.2rem] rounded-sm bg-primary/40 border-primary border-1">
           Done
         </div>
       ),

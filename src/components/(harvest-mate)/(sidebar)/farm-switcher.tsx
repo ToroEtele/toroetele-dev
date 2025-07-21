@@ -14,30 +14,35 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./sidebar";
+import {
+  navFarmChevronStyle,
+  navFarmDropdownTriggerStyle,
+  navFarmIconConatinerStyle,
+  navFarmIconStyle,
+  navFarmNameStyle,
+  navFarmSidebarMenuButtonStyle,
+  navFarmYearStyle,
+} from "@/config/harvest-mate";
 
 export function FarmSwitcher() {
   return (
     <SidebarMenu>
       <SidebarMenuItem className="flex justify-center py-1">
         <DropdownMenu>
-          <DropdownMenuTrigger asChild className="px-0 md:px-1">
+          <DropdownMenuTrigger asChild className={navFarmDropdownTriggerStyle}>
             <SidebarMenuButton
               size="lg"
-              className="h-6 md:h-10 gap-1 md:gap-2 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className={navFarmSidebarMenuButtonStyle}
             >
-              <div className="flex aspect-square size-4 md:size-7 items-center justify-center rounded-sm md:rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <GalleryVerticalEnd className="size-2 md:size-3" />
+              <div className={navFarmIconConatinerStyle}>
+                <GalleryVerticalEnd className={navFarmIconStyle} />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight ">
-                <span className="truncate font-semibold text-3xs md:text-xs">
-                  My Farm
-                </span>
-                <span className="truncate text-4xs md:text-2xs">
-                  2025 fiscal year
-                </span>
+                <span className={navFarmNameStyle}>My Farm</span>
+                <span className={navFarmYearStyle}>2025 fiscal year</span>
               </div>
               <div>
-                <ChevronsUpDown className="ml-auto size-3 " />
+                <ChevronsUpDown className={navFarmChevronStyle} />
               </div>
             </SidebarMenuButton>
           </DropdownMenuTrigger>

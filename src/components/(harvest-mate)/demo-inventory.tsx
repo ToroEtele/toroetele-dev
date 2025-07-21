@@ -1,10 +1,7 @@
 import React from "react";
 
+import { SidebarInset, SidebarProvider } from "./(sidebar)/sidebar";
 import { AppSidebar } from "./sidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/(marketing)/(home)/(demo)/(sidebar)/sidebar";
 import { Navbar } from "./navbar";
 
 export function DemoInventory() {

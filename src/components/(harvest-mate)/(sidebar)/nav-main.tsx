@@ -1,6 +1,7 @@
 "use client";
 
 import { FlaskConical, Fuel, Sprout, Tablets } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 import {
   SidebarGroup,
@@ -17,8 +18,7 @@ import {
   sidebarMenuItemIconStyle,
   sidebarMenuItemTitleStyle,
   sidebarMenuStyle,
-} from "./styles";
-import { cn } from "@/lib/utils";
+} from "../../../config/harvest-mate";
 
 export function NavMain() {
   return (

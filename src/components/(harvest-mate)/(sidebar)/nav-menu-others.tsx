@@ -8,13 +8,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "./sidebar";
-
 import {
   sidebarMenuButtonStyle,
   sidebarMenuItemIconContainerStyle,
   sidebarMenuItemIconStyle,
   sidebarMenuItemTitleStyle,
-} from "./styles";
+} from "../../../config/harvest-mate";
 
 export function NavMenuOthers() {
   return (

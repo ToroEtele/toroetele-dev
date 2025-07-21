@@ -2,12 +2,12 @@ import React from "react";
 import { Plus } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SidebarInset, SidebarProvider } from "./(sidebar)/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { OptionsList, Option } from "@/components/ui/options";
 
-import { AppSidebar } from "./sidebar";
+import { SidebarInset, SidebarProvider } from "./(sidebar)/sidebar";
 import { JobsTable } from "./job-table";
+import { AppSidebar } from "./sidebar";
 import { Navbar } from "./navbar";
 
 export function DemoJobs() {

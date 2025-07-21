@@ -19,7 +19,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./sidebar";
+
+import {
+  navUserAvatarContainerStyle,
+  navUserAvatarStyle,
+  navUserChevronStyle,
+  navUserDropdownTriggerStyle,
+  navUserEmailStyle,
+  navUserNameStyle,
+  navUserSidebarMenuButtonStyle,
+} from "@/config/harvest-mate";
 
 export function NavUser() {
   return (
@@ -29,33 +40,33 @@ export function NavUser() {
           <DropdownMenuTrigger
             asChild
             data-testid="user-menu"
-            className="flex px-0 md:px-1"
+            className={navUserDropdownTriggerStyle}
           >
             <SidebarMenuButton
               size="lg"
-              className="h-6 md:h-12 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground gap-1 md:gap-2"
+              className={navUserSidebarMenuButtonStyle}
             >
-              <Avatar className="h-4 w-4 md:h-6 md:w-6 rounded-lg">
-                <AvatarFallback className="text-3xs md:text-2xs text-gray-400">
+              <Avatar className={navUserAvatarContainerStyle}>
+                <AvatarFallback className={navUserAvatarStyle}>
                   TE
                 </AvatarFallback>
               </Avatar>
               <div className="grid text-left leading-tight">
                 <span
-                  className="truncate font-semibold text-4xs md:text-2xs"
+                  className={navUserNameStyle}
                   data-testid="user-menu-username"
                 >
                   Toró Etele
                 </span>
                 <span
-                  className="truncate text-4xs md:text-2xs"
+                  className={navUserEmailStyle}
                   data-testid="user-menu-email"
                 >
                   toroetele@gmail.com
                 </span>
               </div>
               <div>
-                <ChevronsUpDown className="ml-auto size-2 md:size-3" />
+                <ChevronsUpDown className={navUserChevronStyle} />
               </div>
             </SidebarMenuButton>
           </DropdownMenuTrigger>
@@ -67,18 +78,14 @@ export function NavUser() {
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-1 lg:gap-2 px-0 lg:px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-4 w-4 lg:h-6 lg:w-6 rounded-lg">
-                  <AvatarFallback className="text-3xs lg:text-xs text-gray-400">
+                <Avatar className={navUserAvatarContainerStyle}>
+                  <AvatarFallback className={navUserAvatarStyle}>
                     TE
                   </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold text-3xs lg:text-xs">
-                    Toro Etele
-                  </span>
-                  <span className="truncate text-3xs lg:text-2xs">
-                    toroetele@gmail.com
-                  </span>
+                  <span className={navUserNameStyle}>Toro Etele</span>
+                  <span className={navUserEmailStyle}>toroetele@gmail.com</span>
                 </div>
               </div>
             </DropdownMenuLabel>

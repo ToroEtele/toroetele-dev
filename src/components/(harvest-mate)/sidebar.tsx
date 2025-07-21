@@ -11,8 +11,8 @@ import {
   SidebarSeparator,
 } from "./(sidebar)/sidebar";
 
-import { NavMenuOthers } from "./(sidebar)/nav-menu-others";
 import { FarmSwitcher } from "./(sidebar)/farm-switcher";
+import { NavMenuOthers } from "./(sidebar)/nav-menu-others";
 import { NavMain } from "./(sidebar)/nav-main";
 import { NavMenu } from "./(sidebar)/nav-menu";
 import { NavUser } from "./(sidebar)/nav-user";

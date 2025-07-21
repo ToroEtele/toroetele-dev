@@ -13,7 +13,7 @@ export function TechStackSection({ className }: TechStackSectionProps) {
     <section
       id="about"
       aria-labelledby="techstack-title"
-      className={cn("max-w-xl xl:max-w-5xl flex flex-col mx-auto", className)}
+      className={cn("max-w-xl lg:max-w-5xl flex flex-col mx-auto", className)}
     >
       <HeaderSection
         cardText="About Me"
