@@ -16,7 +16,7 @@ export default function Home() {
 
       <TechStackSection className="min-h-[90vh] px-6 lg:px-12 pt-26 xl:pt-20 mb-20" />
 
-      <ProjectsSection className="px-1 md:px-6 pt-12 md:pt-14" />
+      <ProjectsSection className="px-1 md:px-6 pt-12 lg:pt-14" />
 
       <ContactSection className="px-6" />
     </>

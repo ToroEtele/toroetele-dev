@@ -37,7 +37,7 @@ const content = [
   {
     title: "Harvest Mate",
     description: (
-      <div className="w-full flex flex-col items-center md:items-start gap-6">
+      <div className="w-full flex flex-col items-center lg:items-start gap-6">
         In my free time, I’m developing a comprehensive farm management tool
         designed to empower agricultural businesses. This app helps companies
         efficiently track daily tasks, manage multiple fields, monitor crop

@@ -38,13 +38,13 @@ export const StickyScroll = ({
   });
 
   return (
-    <motion.section ref={ref} className="relative w-full py-10 lg:py-20">
-      <div className="mx-auto flex max-w-8xl flex-col-reverse md:flex-row items-start justify-center gap-8 xl:gap-20">
-        <div className="w-full md:max-w-md py-22 space-y-32">
+    <motion.section ref={ref} className="relative w-full lg:py-20">
+      <div className="mx-auto flex max-w-8xl flex-col-reverse lg:flex-row items-center lg:items-start justify-center gap-8 xl:gap-20">
+        <div className="lg:max-w-md py-22 space-y-22 lg:space-y-32">
           {content.map((item, index) => (
             <div
               key={item.title + index}
-              className="min-h-[30vh] md:min-h-[50vh] w-full md:w-auto text-center px-6 md:text-left"
+              className="min-h-[30vh] lg:min-h-[50vh] w-[350px] md:w-[500px] lg:w-auto text-center px-6 lg:text-left"
             >
               <motion.h2
                 initial={{ opacity: 0 }}
@@ -64,7 +64,7 @@ export const StickyScroll = ({
           ))}
         </div>
 
-        <div className="sticky top-0 self-center md:self-auto z-10">
+        <div className="sticky top-0 self-center lg:self-auto z-10">
           <div className="relative pt-20 pb-10 w-full h-full">
             <div className="absolute inset-0 bg-background z-0" />
 

@@ -9,7 +9,7 @@ export function DemoDashboard() {
     <SidebarProvider className="h-full w-full">
       <AppSidebar />
       <SidebarInset
-        className="w-full h-full bg-red-300 bg-cover bg-center bg-no-repeat"
+        className="w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/dashboard-map.png')",
         }}

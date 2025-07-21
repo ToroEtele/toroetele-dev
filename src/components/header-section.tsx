@@ -17,7 +17,7 @@ export function HeaderSection({
   description,
 }: HeaderSectionProps) {
   return (
-    <div className={cn("flex flex-col items-center gap-4 mb-8", className)}>
+    <div className={cn("flex flex-col items-center gap-4", className)}>
       <PillCard text={cardText} />
       <h1 className="text-3xl lg:text-4xl text-center font-bold">{title}</h1>
       <p className="max-w-3xl px-6 lg:text-lg text-center">{description}</p>

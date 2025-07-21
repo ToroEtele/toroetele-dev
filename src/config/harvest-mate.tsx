@@ -51,12 +51,14 @@ export const jobsTableBadgeStyle =
   "inline-flex items-center rounded-sm border lg:py-[0.1rem] px-[0.2rem] text-3xs font-semibold";
 
 export const jobsCardStyle =
-  "p-1 lg:p-2 gap-[0.1rem] lg:gap-1 rounded-sm lg:rounded-md border-sidebar-border";
+  "gap-[0.1rem] lg:gap-1 rounded-sm lg:rounded-md border-sidebar-border" +
+  BASE_PADDING;
 export const jobsCardHeaderStyle =
   "w-full flex flex-row items-center justify-between space-y-0 p-0";
 export const jobsCardDescriptionStyle =
   "text-4xs lg:text-3xs text-muted-foreground";
-export const jobsTabsStyle = "h-4 lg:h-6 xl:h-8 gap-1 rounded-sm lg:rounded-md";
+
+export const jobsTabsStyle = "h-4 lg:h-6 xl:h-7 gap-1 rounded-sm lg:rounded-md";
 export const jobsTabsTriggerStyle =
-  "h-3 lg:h-4 xl:h-6 w-auto p-[0.10rem] xl:p-1 rounded-sm lg:rounded-md" +
+  "h-3 lg:h-4 xl:h-5 w-auto p-[0.10rem] xl:p-[0.2rem] rounded-sm lg:rounded-md" +
   REGULAR_TEXT;

@@ -55,7 +55,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/logo.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-full min-h-[100vh]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-full min-h-[100vh] overflow-x-hidden`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
