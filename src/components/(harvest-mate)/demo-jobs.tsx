@@ -9,45 +9,55 @@ import { SidebarInset, SidebarProvider } from "./(sidebar)/sidebar";
 import { JobsTable } from "./job-table";
 import { AppSidebar } from "./sidebar";
 import { Navbar } from "./navbar";
+import {
+  jobsCardDescriptionStyle,
+  jobsCardHeaderStyle,
+  jobsCardStyle,
+  jobsTabsStyle,
+  jobsTabsTriggerStyle,
+} from "@/config/harvest-mate";
 
 export function DemoJobs() {
   return (
     <SidebarProvider className="h-full w-full">
       <AppSidebar />
       <SidebarInset className="w-full h-full rounded-r-md">
-        <div className="w-full h-full">
-          <Navbar />
-
-          <Tabs defaultValue="overview" className="py-[36px] px-[8px]">
+        <Navbar />
+        <div className="w-full h-full px-1">
+          <Tabs defaultValue="overview" className="py-5 md:py-7 gap-0 lg:gap-1">
             <div className="w-full flex justify-between">
-              <TabsList className="h-6 xl:h-8">
-                <TabsTrigger value="overview" className={styles.tabsTrigger}>
+              <TabsList className={jobsTabsStyle}>
+                <TabsTrigger value="overview" className={jobsTabsTriggerStyle}>
                   Overview
                 </TabsTrigger>
                 <TabsTrigger
                   value="analytics"
-                  className={styles.tabsTrigger}
+                  className={jobsTabsTriggerStyle}
                   disabled
                 >
                   Analytics
                 </TabsTrigger>
                 <TabsTrigger
                   value="reports"
-                  className={styles.tabsTrigger}
+                  className={jobsTabsTriggerStyle}
                   disabled
                 >
                   Reports
                 </TabsTrigger>
               </TabsList>
 
-              <OptionsList className="h-6 xl:h-8 gap-2">
+              <OptionsList className={jobsTabsStyle}>
                 <React.Fragment>
-                  <Option active className="h-4 xl:h-6 p-1" onClick={() => {}}>
-                    <Plus className="h-3" />
+                  <Option
+                    active
+                    className={jobsTabsTriggerStyle}
+                    onClick={() => {}}
+                  >
+                    <Plus className="h-2 lg:h-3 w-auto" />
                   </Option>
                   <Option
                     active={true}
-                    className={styles.tabsTrigger}
+                    className={jobsTabsTriggerStyle}
                     onClick={() => {}}
                   >
                     Corn
@@ -56,9 +66,9 @@ export function DemoJobs() {
               </OptionsList>
             </div>
 
-            <div className="p-1 grid gap-4 grid-cols-4">
-              <Card className={styles.card}>
-                <CardHeader className={styles.cardHeader}>
+            <div className="py-1 grid gap-1 lg:gap-4 grid-cols-4">
+              <Card className={jobsCardStyle}>
+                <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className={styles.cardTitle}>Expenses</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -75,13 +85,13 @@ export function DemoJobs() {
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                   <div className={styles.cardInfo}>13.000 RON</div>
-                  <p className={styles.cardDescription}>
+                  <p className={jobsCardDescriptionStyle}>
                     +20.1% from last month
                   </p>
                 </CardContent>
               </Card>
-              <Card className={styles.card}>
-                <CardHeader className={styles.cardHeader}>
+              <Card className={jobsCardStyle}>
+                <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className={styles.cardTitle}>Time</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -100,13 +110,13 @@ export function DemoJobs() {
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                   <div className={styles.cardInfo}>12 Hours</div>
-                  <p className={styles.cardDescription}>
+                  <p className={jobsCardDescriptionStyle}>
                     +180.1% from last month
                   </p>
                 </CardContent>
               </Card>
-              <Card className={styles.card}>
-                <CardHeader className={styles.cardHeader}>
+              <Card className={jobsCardStyle}>
+                <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className={styles.cardTitle}>Area</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -124,11 +134,13 @@ export function DemoJobs() {
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                   <div className={styles.cardInfo}>18 Ha</div>
-                  <p className={styles.cardDescription}>+19% from last month</p>
+                  <p className={jobsCardDescriptionStyle}>
+                    +19% from last month
+                  </p>
                 </CardContent>
               </Card>
-              <Card className={styles.card}>
-                <CardHeader className={styles.cardHeader}>
+              <Card className={jobsCardStyle}>
+                <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className={styles.cardTitle}>Income</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,19 +157,19 @@ export function DemoJobs() {
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                   <div className={styles.cardInfo}>+45.000 RON</div>
-                  <p className={styles.cardDescription}>+12% this week</p>
+                  <p className={jobsCardDescriptionStyle}>+12% this week</p>
                 </CardContent>
               </Card>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-7 gap-1 md:gap-2 p-1 md:p-2 rounded-sm md:rounded-lg border-sidebar-border">
-                <CardHeader className={styles.cardHeader}>
+                <CardHeader className={jobsCardHeaderStyle}>
                   <CardTitle className="text-3xs md:text-2xs">
                     Overview
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-1">
+                <CardContent className="p-0">
                   <JobsTable />
                 </CardContent>
               </Card>
@@ -170,12 +182,7 @@ export function DemoJobs() {
 }
 
 const styles = {
-  tabsTrigger: "h-4 xl:h-6 p-1 text-3xs md:text-2xs xl:text-2xs",
-  card: "p-1 lg:p-2 gap-1 lg:gap-2 rounded-sm lg:rounded-md border-sidebar-border",
-  cardHeader:
-    "w-full flex flex-row items-center justify-between space-y-0 p-0 px-1 lg:px-2",
   cardTitle: "text-4xs lg:text-2xs font-medium",
   cardInfo: "text-3xs lg:text-2xs font-bold",
-  cardDescription: "text-4xs lg:text-2xs text-muted-foreground",
   cardContent: "p-0",
 };

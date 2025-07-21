@@ -9,7 +9,8 @@ html {
 }
 
 @theme {
-  --text-2xs: 0.5rem;
+  --text-1.5xs: 0.65rem;
+  --text-2xs: 0.55rem;
   --text-3xs: 0.35rem;
   --text-4xs: 0.25rem;
   --breakpoint-3xl: 120rem;

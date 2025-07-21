@@ -136,7 +136,7 @@ export function JobsTable() {
       accessorKey: "status",
       header: "State",
       cell: () => (
-        <div className="h-full flex items-center justify-center py-[0.1rem] px-[0.2rem] rounded-sm bg-primary/40 border-primary border-1">
+        <div className="h-full flex items-center justify-center py-[0.1rem] px-[0.2rem] rounded-sm bg-[#80e5b5]/40 border-[#80e5b5] text-[#80e5b5] border-1">
           Done
         </div>
       ),
@@ -203,6 +203,11 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import {
+  jobsTableBadgeStyle,
+  jobsTableHeaderStyle,
+  jobsTableRowStyle,
+} from "@/config/harvest-mate";
 
 export function DataTable<TData, TValue>({
   columns,
@@ -225,10 +230,7 @@ export function DataTable<TData, TValue>({
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th
-                  key={header.id}
-                  className="px-1 md:px-2 py-[0.15rem] md:py-[0.2rem] text-left font-medium text-3xs md:text-2xs xl:text-2xs"
-                >
+                <th key={header.id} className={jobsTableHeaderStyle}>
                   {flexRender(
                     header.column.columnDef.header,
                     header.getContext()
@@ -242,10 +244,7 @@ export function DataTable<TData, TValue>({
           {table.getRowModel().rows.map((row) => (
             <tr key={row.id} className="border-t border-sidebar-border">
               {row.getVisibleCells().map((cell) => (
-                <td
-                  key={cell.id}
-                  className="px-1 md:px-2 py-[0.10rem] md:py-[0.2rem] text-3xs md:text-2xs xl:text-2xs"
-                >
+                <td key={cell.id} className={jobsTableRowStyle}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
@@ -280,7 +279,7 @@ export function JobFamilyBadge({ family }: { family: JobFamily }) {
 
   return (
     <div
-      className={`inline-flex items-center rounded-sm border py-[0.1rem] px-[0.2rem] text-3xs lg:text-2xs font-semibold`}
+      className={jobsTableBadgeStyle}
       style={{
         color: color,
         borderColor: color,
