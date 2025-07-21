@@ -21,9 +21,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
         <Header className="h-16 p-4 lg:px-6" />
       </div>
 
-      <div className="relative w-full max-w-screen-2xl flex-1 sm:mx-auto ">
-        {children}
-      </div>
+      <div className="relative w-full flex-1">{children}</div>
 
       <Footer className="" />
     </div>

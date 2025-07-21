@@ -7,7 +7,7 @@ import { FloatingMenu } from "./floating-menu";
 
 export default function HeroSection() {
   return (
-    <BackgroundGradientAnimation className="relative h-[92vh] flex items-center justify-between mx-auto px-4 pt-20 md:pt-28 text-center">
+    <BackgroundGradientAnimation className="relative h-[92vh] w-full flex items-center justify-between px-4 pt-20 md:pt-28 text-center">
       <section aria-label="Introduction" className="w-full pb-[10%]">
         <FloatingMenu className="transform left-1/2 bottom-0 xl:bottom-auto -translate-x-1/2 xl:top-1/2 xl:left-8 xl:transform xl:-translate-y-1/2" />
 
