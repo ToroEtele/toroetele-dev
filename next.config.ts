@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["ghchart.rshah.org"],
   },
+  output: "standalone",
 };
 
 export default nextConfig;
