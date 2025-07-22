@@ -1,0 +1,10 @@
+appname: toroetele-dev
+namespace: portfolio
+registryCredentials:
+hostname: toroetele.dev
+recreatePods: true
+
+env:
+
+image:
+port: 5000
