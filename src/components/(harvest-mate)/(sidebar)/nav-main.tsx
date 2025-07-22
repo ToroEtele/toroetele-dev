@@ -18,7 +18,7 @@ import {
   sidebarMenuItemIconStyle,
   sidebarMenuItemTitleStyle,
   sidebarMenuStyle,
-} from "../../../config/harvest-mate";
+} from "@/config/harvest-mate";
 
 export function NavMain() {
   return (

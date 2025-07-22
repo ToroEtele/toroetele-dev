@@ -61,7 +61,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Harvesting", family: JobFamily.HARVESTING },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-07-12T07:00:00Z",
     executionFinishDate: "2025-07-12T11:30:00Z",
     totalCost: 540,
@@ -72,7 +72,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Fertilization", family: JobFamily.FERTILIZATION },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-06-11T07:45:00Z",
     executionFinishDate: "2025-06-11T09:00:00Z",
     totalCost: 220,
@@ -83,7 +83,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Crop Care", family: JobFamily.CROP_CARE },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-06-10T08:00:00Z",
     executionFinishDate: "2025-06-10T10:00:00Z",
     totalCost: 210,
@@ -94,7 +94,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Fertilization", family: JobFamily.FERTILIZATION },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-05-30T07:45:00Z",
     executionFinishDate: "2025-05-30T09:00:00Z",
     totalCost: 180,
@@ -105,7 +105,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Sowing", family: JobFamily.SOWING },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-05-15T07:30:00Z",
     executionFinishDate: "2025-05-15T11:00:00Z",
     totalCost: 400,
@@ -116,7 +116,7 @@ const mockData: Job[] = [
     jobCategory: { name: "Soil Work", family: JobFamily.SOIL_WORK },
     status: JobStatus.COMPLETED,
     field: { name: "West Plot" },
-    fieldSeason: { area: 14.2 },
+    fieldSeason: { area: 14 },
     executionDate: "2025-05-01T08:00:00Z",
     executionFinishDate: "2025-05-01T10:30:00Z",
     totalCost: 160,
@@ -136,14 +136,19 @@ export function JobsTable() {
       accessorKey: "status",
       header: "State",
       cell: () => (
-        <div className="h-full flex items-center justify-center lg:py-[0.1rem] px-[0.2rem] rounded-sm bg-[#80e5b5]/40 border-[#80e5b5] text-[#80e5b5] border-1">
+        <div
+          className={cn(
+            "bg-[#80e5b5]/40 border-[#80e5b5] text-[#80e5b5]",
+            jobsTableBadgeStyle
+          )}
+        >
           Done
         </div>
       ),
     },
     {
       id: "area",
-      accessorFn: (row) => `${row.fieldSeason.area.toFixed(2)} Ha`,
+      accessorFn: (row) => `${row.fieldSeason.area} Ha`,
       header: "Area",
     },
     {
@@ -162,7 +167,7 @@ export function JobsTable() {
     },
     {
       id: "totalCost",
-      accessorFn: (row) => `${row.totalCost} EUR`,
+      accessorFn: (row) => `${row.totalCost} $`,
       header: "Cost",
     },
     {
@@ -208,6 +213,7 @@ import {
   jobsTableHeaderStyle,
   jobsTableRowStyle,
 } from "@/config/harvest-mate";
+import { cn } from "@/lib/utils";
 
 export function DataTable<TData, TValue>({
   columns,

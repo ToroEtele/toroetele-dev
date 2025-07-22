@@ -19,8 +19,12 @@ export function HeaderSection({
   return (
     <div className={cn("flex flex-col items-center gap-4", className)}>
       <PillCard text={cardText} />
-      <h1 className="text-3xl lg:text-4xl text-center font-bold">{title}</h1>
-      <p className="max-w-3xl px-6 lg:text-lg text-center">{description}</p>
+      <h1 className="text-3xl lg:text-4xl 2xl:text-5xl text-center font-bold">
+        {title}
+      </h1>
+      <p className="max-w-3xl px-6 lg:text-lg 2xl:text-xl text-center">
+        {description}
+      </p>
     </div>
   );
 }

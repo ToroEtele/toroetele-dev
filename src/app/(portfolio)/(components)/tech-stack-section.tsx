@@ -13,7 +13,10 @@ export function TechStackSection({ className }: TechStackSectionProps) {
     <section
       id="about"
       aria-labelledby="techstack-title"
-      className={cn("max-w-xl lg:max-w-5xl flex flex-col mx-auto", className)}
+      className={cn(
+        "min-h-[90vh] flex flex-col justify-center mx-auto gap-4 lg:gap-6 2xl:gap-8",
+        className
+      )}
     >
       <HeaderSection
         cardText="About Me"
@@ -21,39 +24,38 @@ export function TechStackSection({ className }: TechStackSectionProps) {
         description="I’m a passionate software engineer with a deep curiosity about building scalable, reliable, and user-friendly full-stack applications. Over the years, I’ve gained experience across multiple technologies, adapting quickly to new challenges and environments."
       />
 
-      <p className="text-xs md:text-sm 3xl:text-xl mb-4">
-        I usually avoid emphasizing specific programming languages when
-        presenting my skills. For me, the language itself doesn&apos;t matter
-        that much. Of course, you need to get used to the syntax and dive into
-        specific libraries, but what truly matters is understanding how the
-        computer works—how it &quot;thinks&quot; and how you can control it
-        through code. Once you understand that underlying logic, you can work
-        with any language—it just becomes a matter of practice.
-        <br /> <br />
-        I&apos;ve often been thrown into new technologies, languages, and ideas,
-        and every time I&apos;ve adapted quickly. I&apos;d say my greatest
-        strengths are adaptability, eagerness to learn, and fast execution. So
-        rather than focusing on languages, here&apos;s a better way to look at
-        it: these are the technologies I&apos;ve worked with so far. Take a
-        look:
+      <p className="text-xs md:text-sm 3xl:text-lg">
+        I don’t emphasize specific languages — I focus on the logic behind how
+        systems work. Once you get that, switching stacks is just a matter of
+        time and syntax.
+        <br />
+        <br />
+        My strengths? Rapid learning, adaptability, and execution. Here’s a
+        glance at the tools and technologies I’ve worked with:
       </p>
 
-      <article aria-label="Frontend Technologies">
-        <h2 id="techstack-title" className="sr-only">
-          Frontend Technologies
-        </h2>
-        <InfiniteMovingCards items={frontEnd} direction="right" speed="fast" />
-      </article>
+      <div className="flex flex-col gap-2 2xl:gap-4">
+        <article aria-label="Frontend Technologies">
+          <h2 id="techstack-title" className="sr-only">
+            Frontend Technologies
+          </h2>
+          <InfiniteMovingCards
+            items={frontEnd}
+            direction="right"
+            speed="fast"
+          />
+        </article>
 
-      <article aria-label="Backend Technologies">
-        <h2 className="sr-only">Backend Technologies</h2>
-        <InfiniteMovingCards items={backEnd} direction="left" speed="fast" />
-      </article>
+        <article aria-label="Backend Technologies">
+          <h2 className="sr-only">Backend Technologies</h2>
+          <InfiniteMovingCards items={backEnd} direction="left" speed="fast" />
+        </article>
 
-      <article aria-label="Other Technologies">
-        <h2 className="sr-only">Other Technologies</h2>
-        <InfiniteMovingCards items={other} direction="right" speed="fast" />
-      </article>
+        <article aria-label="Other Technologies">
+          <h2 className="sr-only">Other Technologies</h2>
+          <InfiniteMovingCards items={other} direction="right" speed="fast" />
+        </article>
+      </div>
     </section>
   );
 }

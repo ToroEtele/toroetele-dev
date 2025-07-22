@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appname }}-deployment
+  namespace: {{ .Values.namespace }}
+  labels:
+    service: {{ .Values.appname }}
+    app: {{ .Values.appname }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appname }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appname }}
+      {{- if .Values.recreatePods }}
+      annotations:
+        releaseTime: {{ dateInZone "2006-01-02 15:04:05Z" (now) "UTC"| quote }}
+      {{- end }}
+    spec:
+      containers:
+        - name: {{ .Values.appname }}
+          image: {{ .Values.image }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.port }}
+          env:
+          {{- range $key, $val := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+          {{- end }}
+          startupProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.port }}
+            failureThreshold: 10
+            periodSeconds: 1
+      imagePullSecrets:
+        - name: {{ .Values.appname }}-registry-credentials

@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <TechStackSection className="min-h-[90vh] px-6 lg:px-12 pt-26 xl:pt-20 mb-20" />
+      <TechStackSection className="max-w-3xl 3xl:max-w-7xl pt-26 xl:pt-20 px-6 mb-20" />
 
-      <ProjectsSection className="px-1 md:px-6 pt-12 lg:pt-14" />
+      <ProjectsSection className="max-w-5xl 3xl:max-w-7xl pt-12 lg:pt-14 px-6" />
 
       <ContactSection className="px-6" />
     </>

@@ -23,7 +23,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
 
       <div className="relative w-full flex-1">{children}</div>
 
-      <Footer className="" />
+      <Footer className="max-w-6xl 3xl:max-w-7xl" />
     </div>
   );
 }

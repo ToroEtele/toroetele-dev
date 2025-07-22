@@ -12,7 +12,9 @@ import { Navbar } from "./navbar";
 import {
   jobsCardDescriptionStyle,
   jobsCardHeaderStyle,
+  jobsCardInfoStyle,
   jobsCardStyle,
+  jobsCardTitleStyle,
   jobsTabsStyle,
   jobsTabsTriggerStyle,
 } from "@/config/harvest-mate";
@@ -69,7 +71,7 @@ export function DemoJobs() {
             <div className="py-1 grid gap-1 2xl:gap-2 grid-cols-4">
               <Card className={jobsCardStyle}>
                 <CardHeader className={jobsCardHeaderStyle}>
-                  <CardTitle className={styles.cardTitle}>Expenses</CardTitle>
+                  <CardTitle className={jobsCardTitleStyle}>Expenses</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -84,7 +86,7 @@ export function DemoJobs() {
                   </svg>
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
-                  <div className={styles.cardInfo}>13.000 RON</div>
+                  <div className={jobsCardInfoStyle}>1.710 $</div>
                   <p className={jobsCardDescriptionStyle}>
                     +20.1% from last month
                   </p>
@@ -92,7 +94,7 @@ export function DemoJobs() {
               </Card>
               <Card className={jobsCardStyle}>
                 <CardHeader className={jobsCardHeaderStyle}>
-                  <CardTitle className={styles.cardTitle}>Time</CardTitle>
+                  <CardTitle className={jobsCardTitleStyle}>Time</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -109,7 +111,7 @@ export function DemoJobs() {
                   </svg>
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
-                  <div className={styles.cardInfo}>12 Hours</div>
+                  <div className={jobsCardInfoStyle}>15 Hours</div>
                   <p className={jobsCardDescriptionStyle}>
                     +180.1% from last month
                   </p>
@@ -117,7 +119,7 @@ export function DemoJobs() {
               </Card>
               <Card className={jobsCardStyle}>
                 <CardHeader className={jobsCardHeaderStyle}>
-                  <CardTitle className={styles.cardTitle}>Area</CardTitle>
+                  <CardTitle className={jobsCardTitleStyle}>Area</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -133,15 +135,13 @@ export function DemoJobs() {
                   </svg>
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
-                  <div className={styles.cardInfo}>18 Ha</div>
-                  <p className={jobsCardDescriptionStyle}>
-                    +19% from last month
-                  </p>
+                  <div className={jobsCardInfoStyle}>14 Ha</div>
+                  <p className={jobsCardDescriptionStyle}>122,14$/ha</p>
                 </CardContent>
               </Card>
               <Card className={jobsCardStyle}>
                 <CardHeader className={jobsCardHeaderStyle}>
-                  <CardTitle className={styles.cardTitle}>Income</CardTitle>
+                  <CardTitle className={jobsCardTitleStyle}>Income</CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ export function DemoJobs() {
                   </svg>
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
-                  <div className={styles.cardInfo}>+45.000 RON</div>
+                  <div className={jobsCardInfoStyle}>+3.000$</div>
                   <p className={jobsCardDescriptionStyle}>+12% this week</p>
                 </CardContent>
               </Card>
@@ -182,7 +182,5 @@ export function DemoJobs() {
 }
 
 const styles = {
-  cardTitle: "text-4xs lg:text-2xs font-medium",
-  cardInfo: "text-3xs lg:text-2xs font-bold",
   cardContent: "p-0",
 };

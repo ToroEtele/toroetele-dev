@@ -19,10 +19,7 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ className }: ProjectsSectionProps) {
   return (
-    <section
-      id="projects"
-      className={cn("min-h-[90vh] max-w-8xl mx-auto", className)}
-    >
+    <section id="projects" className={cn("min-h-[90vh] mx-auto", className)}>
       <HeaderSection
         cardText="Projects"
         title="What did I build so far?"

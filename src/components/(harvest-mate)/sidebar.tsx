@@ -7,7 +7,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
   SidebarSeparator,
 } from "./(sidebar)/sidebar";
 
@@ -25,7 +24,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       variant="floating"
       className="h-full w-full p-0"
     >
-      <SidebarHeader className="items-center p-0">
+      <SidebarHeader className="items-center p-0 px-[0.2rem]">
         <FarmSwitcher />
       </SidebarHeader>
 
@@ -43,7 +42,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter className="items-center p-[0.2rem]">
         <NavUser />
       </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
   );
 }

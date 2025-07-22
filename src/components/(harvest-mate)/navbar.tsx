@@ -1,7 +1,7 @@
 import React from "react";
 
+import { navbarStyle } from "@/config/harvest-mate";
+
 export function Navbar() {
-  return (
-    <div className="z-30 absolute top-0 h-4 md:h-6 w-full flex items-center bg-sidebar border border-sidebar-border rounded-tr-xs"></div>
-  );
+  return <div className={navbarStyle}></div>;
 }
